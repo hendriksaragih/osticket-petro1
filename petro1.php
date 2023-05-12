@@ -111,7 +111,7 @@ class Petro1Plugin extends Plugin
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                     'Content-Type: application/json',
-                    'Api-Key: ' . $api_key,
+                    'API_KEY: ' . $api_key,
                     'Content-Length: ' . strlen($data_string))
             );
 
