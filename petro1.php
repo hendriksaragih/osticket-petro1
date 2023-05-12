@@ -64,8 +64,11 @@ class Petro1Plugin extends Plugin
         }
 
         $ticket = $this->getTicket($entry);
+        if (!$ticket instanceof Ticket) {
+            return;
+        }
         $first_entry = $ticket->getMessages()[0];
-        if ($entry->getId() == $first_entry->getId()) { // ignore for ticket created
+        if ($first_entry == null || $entry->getId() == $first_entry->getId()) { // ignore for ticket created
             return;
         }
 
